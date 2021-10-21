@@ -32,7 +32,7 @@ SelfId-Auth-Fluence is a hackathon project for Ceramic Self.Id authentication in
         b341307b-6f70-4e4f-9b65-f3c18e693490
 
 ## YouTube Demo
-    www.youtube.com
+https://www.youtube.com/watch?v=xZgbMxbODSg
 
 
 ## License
