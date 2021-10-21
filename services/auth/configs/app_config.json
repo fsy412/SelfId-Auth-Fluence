@@ -1,0 +1,18 @@
+{
+	"services": {
+		"add": {
+			"dependencies": ["add_service"],
+			"node": "12D3KooWHLxVhUQyAuZe6AHMB29P7wkvTNMn7eDMcsqimJYLKREf"
+		}
+	},
+	"modules": {
+		"add": {
+			"file": "artifacts/add_service.wasm",
+            "config": {
+				"preopened_files": []
+			}
+		}
+	},
+	"scripts": {},
+	"script_storage": {}
+}

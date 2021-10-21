@@ -1,0 +1,32 @@
+data PermissionListResp:
+  dids: []string
+  ret_code: i32
+  err_msg: string
+
+data Resp:
+  ret_code: i32
+  err_msg: string
+
+service AuthService:
+  add_permission(did: string) -> Resp
+  auth(did: string) -> bool
+  get_permission_list() -> PermissionListResp
+  remove_permission(did: string) -> Resp
+
+func add_permission(did: string, node_id:string, service_id:string) -> Resp:
+    on node_id:
+        AuthService service_id
+        res <- AuthService.add_permission(did)
+    <- res
+
+func get_permission_list(node_id:string, service_id:string) -> PermissionListResp:
+    on node_id:
+        AuthService service_id
+        res <- AuthService.get_permission_list()
+    <- res
+
+func remove_permission(did:string, node_id:string, service_id:string) -> Resp:
+    on node_id:
+        AuthService service_id
+        res <- AuthService.remove_permission(did)
+    <- res

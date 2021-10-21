@@ -1,0 +1,18 @@
+data NodeServiceTuple:
+    node_id: string
+    service_id: string
+
+service Greeting:
+    greeting(auth: bool, did: string) -> string
+
+service AuthService:
+    auth(did: string) -> bool
+
+func greeting(did:string, ns_tuples: []NodeServiceTuple) -> string:
+    on ns_tuples!0.node_id:
+        AuthService ns_tuples!0.service_id
+        is_auth <- AuthService.auth(did)
+    on ns_tuples!1.node_id:
+        Greeting ns_tuples!1.service_id
+        res <- Greeting.greeting(is_auth, did)
+    <- res
