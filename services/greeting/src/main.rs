@@ -10,6 +10,6 @@ pub fn greeting(auth:bool, did: String) -> String {
     if auth {
         format!("Hi, {}", did)
     }else{
-        format!("You are not authorized")
+        format!("You are not authenticated")
     }
 }
